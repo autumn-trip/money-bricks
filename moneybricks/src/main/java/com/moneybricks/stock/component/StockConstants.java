@@ -10,7 +10,7 @@ import java.util.Map;
 @Component
 public class StockConstants {
     public static final Map<String, List<Stock>> INDUSTRY_STOCKS = Map.of(
-            "IT/반도체", Arrays.asList(
+            "IT/반도체", Arrays.asList( 
                     new Stock("005930", "삼성전자", "IT/반도체"),
                     new Stock("000660", "SK하이닉스", "IT/반도체"),
                     new Stock("035420", "NAVER", "IT/반도체"),
