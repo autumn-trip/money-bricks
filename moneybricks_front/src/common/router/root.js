@@ -1,5 +1,6 @@
 import {createBrowserRouter} from "react-router-dom";
 import {lazy, Suspense} from "react";
+import comparisonDepositRouter from "../../comparisonDeposit/router/comparisonDepositRouter";
 
 
 const Loading = <div>Loading</div>
@@ -14,6 +15,10 @@ const root = createBrowserRouter([
                 <Main />
             </Suspense>
         )
+    },
+    {
+        path: "/product",
+        children: comparisonDepositRouter,
     }
 ]);
 

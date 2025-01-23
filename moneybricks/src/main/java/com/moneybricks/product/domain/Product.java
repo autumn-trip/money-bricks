@@ -14,11 +14,11 @@ public class Product {
     private String finPrdtCd; // 상품 코드 (PK)
     private String dclsMonth;
     private String finCoNo;
-    private String korCoNm;
-    private String finPrdtNm;
+    private String korCoNm; // 은행명
+    private String finPrdtNm; // 상품명
     private String joinWay;
-    private String mtrtInt;
-    private String spclCnd;
+    private String mtrtInt; // 금리
+    private String spclCnd; // 우대 이율
     private String joinDeny;
     private String joinMember;
     private String etcNote;
@@ -28,5 +28,5 @@ public class Product {
     private String finCoSubmDay;
 
     @Enumerated(EnumType.STRING)
-    private ProductType productType;
+    private ProductType productType; // 예금, 적금 타입으로 분류
 }

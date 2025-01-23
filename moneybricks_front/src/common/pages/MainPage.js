@@ -18,7 +18,7 @@ const logoSrc =
 const MainPage = () => {
     const categories = [
         { id: 1, title: '모의 주식' },
-        { id: 2, title: '예적금 비교' },
+        { id: 2, title: '예적금 비교', path: "/product" },
         { id: 3, title: '커뮤니티' },
         { id: 4, title: '금융 정보' },
         { id: 5, title: '퀴즈' },
