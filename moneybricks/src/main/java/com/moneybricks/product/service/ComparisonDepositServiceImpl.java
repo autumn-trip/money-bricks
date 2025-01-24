@@ -3,6 +3,7 @@ package com.moneybricks.product.service;
 import com.moneybricks.common.dto.PageRequestDTO;
 import com.moneybricks.common.dto.PageResponseDTO;
 import com.moneybricks.product.domain.Product;
+import com.moneybricks.product.domain.ProductType;
 import com.moneybricks.product.dto.ProductDTO;
 import com.moneybricks.product.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -28,14 +29,16 @@ public class ComparisonDepositServiceImpl implements ComparisonDepositService {
     private final ProductRepository productRepository;
 
     @Override
-    public PageResponseDTO<ProductDTO> list(PageRequestDTO pageRequestDTO) {
+    public PageResponseDTO<ProductDTO> list(PageRequestDTO pageRequestDTO, ProductType productType) {
         Pageable pageable =
                 PageRequest.of(
                         pageRequestDTO.getPage() - 1 ,  // 1페이지가 0이므로 주의
                         pageRequestDTO.getSize(),
                         Sort.by("finPrdtCd").descending());
 
-        Page<Product> result = productRepository.findAll(pageable);
+        Page<Product> result = productType == null
+                ? productRepository.findAll(pageable)
+                : productRepository.findByProductType(productType, pageable);
 
         List<ProductDTO> dtoList = result.getContent().stream()
                 .map(product -> modelMapper.map(product, ProductDTO.class))

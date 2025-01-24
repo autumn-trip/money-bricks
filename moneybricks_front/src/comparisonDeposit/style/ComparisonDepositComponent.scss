@@ -1,71 +1,86 @@
+$primary-color: #0D548E;
+$secondary-color: #7FC2EF;
+
 .comparison-deposit {
-  padding: 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #fff; // 전체 배경 흰색
 
   .button-group {
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
 
     button {
-      background-color: #4caf50;
-      color: white;
-      border: none;
-      border-radius: 5px;
       padding: 10px 20px;
       margin: 0 10px;
+      border: 2px solid $primary-color;
+      border-radius: 5px;
+      background-color: #fff;
+      color: $primary-color;
+      font-weight: bold;
       cursor: pointer;
-
-      &:hover {
-        background-color: darken(#4caf50, 10%);
-      }
+      transition: all 0.3s;
 
       &.active {
-        background-color: darken(#4caf50, 15%);
+        background-color: $primary-color;
+        color: #fff;
+      }
+
+      &:hover {
+        background-color: $secondary-color;
+        color: #fff;
+        border-color: $secondary-color;
       }
     }
   }
 
   .product-list {
-    margin: 0 auto;
-    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 기본적으로 2열로 배치
+    gap: 20px;
+    justify-content: center; // 아이템 가운데 정렬
+    max-width: 900px; // 리스트의 최대 너비 설정
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr; // 화면이 작아질 경우 1열로 배치
+    }
 
     .product-card {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 15px;
-      margin-bottom: 10px;
-      text-align: left;
+      background-color: #fff;
+      border: 1px solid $primary-color;
+      border-radius: 10px;
+      padding: 20px;
+      width: 100%;
+      max-width: 400px; // 카드 너비 제한
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+      }
 
       h3 {
-        margin: 0;
-        color: #4caf50;
+        font-size: 1.2rem;
+        color: $primary-color;
+        margin-bottom: 15px;
+        margin-top: 0;
+        text-align: center;
       }
 
       p {
+        font-size: 0.9rem;
+        color: #555;
         margin: 5px 0;
-        font-size: 14px;
-      }
-    }
-  }
 
-  .pagination {
-    margin-top: 20px;
-
-    button {
-      background-color: #ddd;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 15px;
-      margin: 0 5px;
-      cursor: pointer;
-
-      &:hover {
-        background-color: #bbb;
-      }
-
-      &.active {
-        background-color: #4caf50;
-        color: white;
+        strong {
+          font-weight: bold;
+          color: $primary-color;
+        }
       }
     }
   }

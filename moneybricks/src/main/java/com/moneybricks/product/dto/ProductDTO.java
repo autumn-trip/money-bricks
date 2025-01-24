@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ProductDTO {
     private String finPrdtCd; // 상품 코드
-    private String koreCoNm; // 은행명
+    private String korCoNm; // 은행명
     private String finPrdtNm; // 상품명
     private String mtrtInt; // 금리
     private String spclCnd; // 우대 이율
