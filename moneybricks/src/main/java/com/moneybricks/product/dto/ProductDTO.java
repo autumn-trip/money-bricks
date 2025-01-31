@@ -17,4 +17,6 @@ public class ProductDTO {
     private String mtrtInt; // 금리
     private String spclCnd; // 우대 이율
     private ProductType productType; // 예금 적금 구분
+    private double intrRate; // 기본 금리
+    private double intrRate2; // 최고 금리
 }

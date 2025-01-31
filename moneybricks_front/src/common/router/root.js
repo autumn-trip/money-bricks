@@ -6,6 +6,7 @@ import comparisonDepositRouter from "../../comparisonDeposit/router/comparisonDe
 const Loading = <div>Loading</div>
 
 const Main = lazy(() => import("../pages/MainPage"));
+const OwnProduct = lazy(() => import("../../ownProduct/pages/OwnProductPage"))
 
 const root = createBrowserRouter([
     {
@@ -19,7 +20,15 @@ const root = createBrowserRouter([
     {
         path: "/product",
         children: comparisonDepositRouter,
-    }
+    },
+    {
+        path: "/ownproduct",
+        element: (
+            <Suspense fallback={Loading}>
+                <OwnProduct />
+            </Suspense>
+        )
+    },
 ]);
 
 export default root;

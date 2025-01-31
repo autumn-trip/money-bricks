@@ -1,9 +1,6 @@
 package com.moneybricks.product.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -26,6 +23,10 @@ public class Product {
     private String dclsStrtDay;
     private String dclsEndDay;
     private String finCoSubmDay;
+
+    // option 데이터
+    private double intrRate; // 기본 금리
+    private double intrRate2; // 최고 금리
 
     @Enumerated(EnumType.STRING)
     private ProductType productType; // 예금, 적금 타입으로 분류
