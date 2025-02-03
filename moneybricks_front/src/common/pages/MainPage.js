@@ -2,6 +2,7 @@ import React from "react";
 import "../style/MainPage.scss";
 import {Link} from "react-router-dom";
 import FooterComponent from "../component/FooterComponent";
+import NavComponent from "../component/NavComponent";
 
 
 const SearchIcon = () => (
@@ -58,6 +59,9 @@ const MainPage = () => {
                     </div>
                 ))}
             </nav>
+            <div>
+                <NavComponent />
+            </div>
             <div>
                 <FooterComponent/>
             </div>

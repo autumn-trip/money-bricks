@@ -10,19 +10,19 @@ const footerComponent = () => {
 
     return (
     <footer className="footer-container">
-        {/* 상단 섹션 */}
-        <div className="footer-content">
-            {/* 왼쪽 컨택트 정보 */}
-            <div className="footer-contact">
-                <h2>MoneyBricks는</h2>
-                <p>
-                    금융을 이해하고 활용할 수 있도록 돕는 금융 교육 플랫폼, MoneyBricks. 쉽고 재미있는 금융 학습으로 여러분의 경제적 자신감을 키워드립니다.
-                </p>
-            </div>
-        </div>
-
-        {/* 하단 섹션 */}
         <div className="footer-bottom">
+            {/* 상단 섹션 */}
+            <div className="footer-content">
+                {/* 왼쪽 컨택트 정보 */}
+                <div className="footer-contact">
+                    <h2>MoneyBricks는</h2>
+                    <p>
+                        금융을 이해하고 활용할 수 있도록 돕는 금융 교육 플랫폼, MoneyBricks. 쉽고 재미있는 금융 학습으로 여러분의 경제적 자신감을 키워드립니다.
+                    </p>
+                </div>
+            </div>
+
+            {/* 하단 섹션 */}
             <p>
                 개인정보처리방침 | 사이트맵
                 <br/>

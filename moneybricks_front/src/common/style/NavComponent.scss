@@ -1,0 +1,53 @@
+$primary-color: #0D548E;
+$secondary-color: #7FC2EF;
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 30px;
+}
+
+.main-layout-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 7;
+}
+
+.main-layout-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 3;
+}
+
+.image1, .image2 {
+  width: 100%;
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.news, .dictionary {
+  background-color: $primary-color;
+  color: white;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.news h2, .dictionary h2 {
+  margin: 0;
+}
+
+.news {
+  flex: 2;
+}
+
+.dictionary {
+  flex: 1;
+}

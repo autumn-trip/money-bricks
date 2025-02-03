@@ -1,6 +1,7 @@
 import {createBrowserRouter} from "react-router-dom";
 import {lazy, Suspense} from "react";
 import comparisonDepositRouter from "../../comparisonDeposit/router/comparisonDepositRouter";
+import DictionaryPage from "../../dictionary/pages/DictionaryPage";
 
 
 const Loading = <div>Loading</div>
@@ -29,6 +30,14 @@ const root = createBrowserRouter([
             </Suspense>
         )
     },
+    {
+        path: "/dictionary",
+        element: (
+            <Suspense fallback={Loading}>
+                <DictionaryPage/>
+            </Suspense>
+        )
+    }
 ]);
 
 export default root;
