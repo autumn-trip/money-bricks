@@ -1,0 +1,30 @@
+// LoadingSpinner.scss
+
+$loading-bg-color: rgba(0, 0, 0, 0.3); // 로딩 배경 색상
+
+// 로딩 스피너 스타일
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $loading-bg-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  .loading-spinner {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}

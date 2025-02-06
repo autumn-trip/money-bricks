@@ -2,6 +2,10 @@ import {createBrowserRouter} from "react-router-dom";
 import {lazy, Suspense} from "react";
 import comparisonDepositRouter from "../../comparisonDeposit/router/comparisonDepositRouter";
 import DictionaryPage from "../../dictionary/pages/DictionaryPage";
+import MoneynewsPage from "../../moneyNews/page/MoneynewsPage";
+import loginRouter from "../../member/router/loginRouter";
+import memberRouter from "../../member/router/memberRouter";
+import accountRouter from "../../member/router/accountRouter";
 
 
 const Loading = <div>Loading</div>
@@ -37,6 +41,26 @@ const root = createBrowserRouter([
                 <DictionaryPage/>
             </Suspense>
         )
+    },
+    {
+        path: "/moneynews",
+        element: (
+            <Suspense fallback={Loading}>
+                <MoneynewsPage/>
+            </Suspense>
+        )
+    },
+    {
+        path: "/auth",
+        children: loginRouter(),
+    },
+    {
+        path: "/member",
+        children: memberRouter(),
+    },
+    {
+        path: "/account",
+        children: accountRouter(),
     }
 ]);
 

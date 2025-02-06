@@ -1,5 +1,6 @@
 import React from 'react';
 import "../style/NavComponent.scss";
+import NavDictionaryComponent from "./NavDictionaryComponent";
 
 export const NavComponent = () => {
     return (
@@ -19,7 +20,7 @@ export const NavComponent = () => {
             </div>
             <div className="main-layout-right">
                 <div className="dictionary">
-                    <h2>사전</h2>
+                    <NavDictionaryComponent />
                 </div>
                 <div className="image2">
                     <img

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 
 const AutoCompleteInput = ({ suggestions = [], onSearch }) => {
     const [inputValue, setInputValue] = useState(""); // 입력 값 상태
@@ -15,9 +15,10 @@ const AutoCompleteInput = ({ suggestions = [], onSearch }) => {
         } else {
             setShowSuggestions(true);
             console.log("AutoCompleteInput에서 검색어 전달:", value); // 디버깅용 로그
-            onSearch(value);
+            // onSearch(value);
         }
     };
+
     // 추천어 클릭 핸들러
     const handleSuggestionClick = (suggestion) => {
         if (!suggestion || !suggestion.dictionaryTerms.trim()) {

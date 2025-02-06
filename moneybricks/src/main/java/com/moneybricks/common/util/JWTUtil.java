@@ -6,6 +6,7 @@ import io.jsonwebtoken.security.Keys;
 import lombok.extern.log4j.Log4j2;
 
 import javax.crypto.SecretKey;
+import java.nio.charset.StandardCharsets;
 import java.time.ZonedDateTime;
 import java.util.Date;
 import java.util.Map;
@@ -15,8 +16,9 @@ public class JWTUtil {
     // 30자 이상 써야함
     private static String key = "1234567890123456789012345678901234567890";
 
-    // jwt 토큰을 생성하기 위한 메서드
+    // jwt 토큰을 생성하기 위한 메서드.
     public static String generateToken(Map<String, Object> valueMap, int min){
+
 
         SecretKey key = null;
 
@@ -44,7 +46,7 @@ public class JWTUtil {
 
         try{
 
-            SecretKey key = Keys.hmacShaKeyFor(JWTUtil.key.getBytes("UTF-8"));
+            SecretKey key = Keys.hmacShaKeyFor(JWTUtil.key.getBytes(StandardCharsets.UTF_8));
 
             claim = Jwts.parserBuilder()
                     .setSigningKey(key)

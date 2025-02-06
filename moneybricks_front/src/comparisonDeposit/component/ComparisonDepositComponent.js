@@ -83,7 +83,7 @@ const ComparisonDepositComponent = () => {
                 {/* 필터 셀렉트 박스 */}
                 <div className="filter-section">
                     <div className="filter-box">
-                        <label htmlFor="sortSelect">정렬 기준: </label>
+                        <label htmlFor="sortSelect">정렬 기준 (내림차순 기준): </label>
                         <select
                             id="sortSelect"
                             value={sortOption}

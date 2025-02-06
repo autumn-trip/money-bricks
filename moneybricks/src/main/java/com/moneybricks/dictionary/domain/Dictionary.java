@@ -1,6 +1,5 @@
 package com.moneybricks.dictionary.domain;
 
-
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,6 +9,7 @@ import lombok.Setter;
 @Setter
 @Table(name = "Dictionary")public class Dictionary {
         @Id
+        @Column(nullable = false)
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long dictionaryId;
 
@@ -24,10 +24,6 @@ import lombok.Setter;
 
         @Column(name = "dictionary_code",nullable = false)
         private Integer dictionaryCode; // 1: 금융, 2: 경제, 3: 경영 ......
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
-
-        private Integer code; //
-    }
+}
 
 

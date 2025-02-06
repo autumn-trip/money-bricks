@@ -1,16 +1,16 @@
 import axios from "axios";
-import { getCookie, setCookie } from "./cookieUtil";
-import { API_SERVER_HOST } from "../api/axiosApi";
+import {getCookie, setCookie} from "./cookieUtil";
+import {API_SERVER_HOST} from "../../member/api/loginApi";
 
 const jwtAxios = axios.create();
 
 const refreshJWT = async (accessToken, refreshToken) => {
     const host = API_SERVER_HOST;
 
-    const header = { headers: { Authorization: `Bearer ${accessToken}` } };
+    const header = {headers: {Authorization: `Bearer ${accessToken}`}};
 
     const res = await axios.get(
-        `${host}/api/member/refresh?refreshToken=${refreshToken}`,
+        `${host}/api/auth/refresh?refreshToken=${refreshToken}`,
         // url 확인 필요
         header,
     );
@@ -29,10 +29,10 @@ const beforeReq = (config) => {
 
     if (!memberInfo) {
         console.log("Member NOT FOUND");
-        return Promise.reject({ response: { data: { error: "REQUIRE_LOGIN" } } });
+        return Promise.reject({response: {data: {error: "REQUIRE_LOGIN"}}});
     }
 
-    const { accessToken } = memberInfo;
+    const {accessToken} = memberInfo;
 
     // Authorization (허가)헤더 처리
     config.headers.Authorization = `Bearer ${accessToken}`;

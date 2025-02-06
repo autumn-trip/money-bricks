@@ -1,0 +1,87 @@
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out,
+  color 0.3s ease-in-out;
+
+
+  .logo {
+    font-size: 1.5rem;
+
+    img {
+      height: 40px;
+      width: 120px;
+      transition: content 0.3s ease-in-out;
+    }
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 200px; // 아이콘들의 최대 영역 크기 설정
+    width: 100%; // 아이콘이 1개든 3개든 가로폭을 차지할 수 있게 설정
+
+    .menu-login {
+      font-weight: bold;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: #0D548E;
+      }
+    }
+  }
+}
+
+// 반응형 스타일
+@media (max-width: 1200px) {
+  .menu-header {
+    padding: 10px 15px;
+  }
+
+  .icons {
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .menu-header {
+    padding: 10px 10px;
+  }
+
+  .icons {
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-header {
+    padding: 8px 8px;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+}

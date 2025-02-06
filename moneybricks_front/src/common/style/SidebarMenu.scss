@@ -1,0 +1,52 @@
+$primary-color: #0D548E;
+$text-color: #333;
+$border-color: #ced4da;
+$background-color: #f8f9fa;
+$white: #ffffff;
+$disabled-color: lighten($primary-color, 20%);
+$secondary-text-color: darken($border-color, 30%);
+$accent-color: #6b7280;
+$input-underline-color: #e5e7eb;
+
+.sidebar-menu {
+  background-color: $white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+
+  h3 {
+    cursor: pointer;
+    color: $primary-color;
+    font-weight: 600;
+    padding: 10px;
+    border-bottom: 1px solid $border-color;
+  }
+
+  .submenu {
+    padding-left: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+
+    li {
+      list-style: none;
+      margin: 5px 0;
+    }
+
+    .submenu.open {
+      max-height: 500px; // 충분히 큰 값으로 설정해서 메뉴가 열리도록 함
+    }
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+      display: block;
+      padding: 5px;
+      &:hover {
+        background-color: $primary-color;
+        color: $white;
+      }
+    }
+  }
+}
